@@ -54,6 +54,9 @@ const resolvers = {
       );
 
       return saveBook;
+    },
+    removeBook: async ( parent, { bookId }) => {
+      return savedBook.findOneAndDelete({ _id: bookId });
     }
   }
 };
