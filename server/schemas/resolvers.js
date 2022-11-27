@@ -1,4 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
+const { default: SavedBooks } = require('../../client/src/pages/SavedBooks');
 const { User, Book } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -43,6 +44,16 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    saveBook: async (parent, args) => {
+      // add parameters on line 50, col 49 ?
+      const saveBook = await SavedBooks.create({ });
+
+      await User.findOneAndUpdate(
+        { $addToSet: { savedBooks: savedBook._id } }
+      );
+
+      return saveBook;
     }
   }
 };
