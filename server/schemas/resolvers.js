@@ -20,9 +20,11 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
+        // creates the user
         const user = await User.create({ username, email, password });
+        // signs a JSON Web Token for the user and logs the user in after they are created
         const token = signToken(user);
-
+        // returns the signed token and user's info as an `Auth` object
         return { token, user };
     },
     login: async (parent, { email, password }) => {
@@ -39,6 +41,7 @@ const resolvers = {
       }
 
       const token = signToken(user);
+
       return { token, user };
     }
   }
