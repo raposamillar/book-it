@@ -49,7 +49,7 @@ const SavedBooks = () => {
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
     // use filter to exclude books that have not been removed?
-    const bookToRemove = searchedBooks.filter((book) => book.bookId === bookId);
+    const bookToRemove = SavedBooks.filter((book) => book.bookId === bookId);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
