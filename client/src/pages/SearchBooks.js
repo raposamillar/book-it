@@ -100,6 +100,10 @@ const SearchBooks = () => {
     // }
   };
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
