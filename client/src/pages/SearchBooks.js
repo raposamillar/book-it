@@ -9,6 +9,7 @@ import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 import { SAVE_BOOK } from '../utils/mutations';
 
 import { useQuery, useMutation } from '@apollo/client';
+import { GET_ME } from '../utils/queries';
 
 const SearchBooks = () => {
 
@@ -17,6 +18,8 @@ const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
+
+  const { loading, data } = useQuery(GET_ME);
 
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());

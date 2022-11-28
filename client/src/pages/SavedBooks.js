@@ -19,7 +19,7 @@ const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
 
   // use this to determine if `useEffect()` hook needs to run again
-  // const userDataLength = Object.keys(userData).length;
+  const userDataLength = Object.keys(userData).length;
 
   // useEffect(() => {
   //   const getUserData = async () => {
@@ -63,7 +63,7 @@ const SavedBooks = () => {
         variables: { id: bookToRemove.bookId }
       });  
 
-      setRemovedBookIds([...removedBookIds, bookToRemove.bookId]);
+      setRemoveBookId([...removeBookId, bookToRemove.bookId]);
 
       // if (!response.ok) {
       //   throw new Error('something went wrong!');
@@ -79,9 +79,9 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  // if (!userDataLength) {
-  //   return <h2>LOADING...</h2>;
-  // }
+  if (!userDataLength) {
+    return <h2>LOADING...</h2>;
+  }
 
   return (
     <>
