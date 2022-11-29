@@ -19,7 +19,7 @@ const SearchBooks = () => {
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
-  const { loading, data } = useQuery(GET_ME);
+  const { loading, /*data*/ } = useQuery(GET_ME);
 
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
@@ -52,7 +52,7 @@ const SearchBooks = () => {
         authors: book.volumeInfo.authors || ['No author to display'],
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
+        image: book.volumeInfo.imageLinks.thumbnail || '',
       }));
 
       setSearchedBooks(bookData);
@@ -86,18 +86,6 @@ const SearchBooks = () => {
       console.error(e);
     }
 
-    // try {
-    //   const response = await saveBook(bookToSave /*, token */);
-
-    //   if (!response.ok) {
-    //     throw new Error('something went wrong!');
-    //   }
-
-    //   // if book successfully saves to user's account, save book id to state
-    //   setSavedBookIds([...savedBookIds, bookToSave.bookId]);
-    // } catch (err) {
-    //   console.error(err);
-    // }
   };
 
   if (loading) {
@@ -148,6 +136,7 @@ const SearchBooks = () => {
                   <Card.Title>{book.title}</Card.Title>
                   <p className='small'>Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
+{/*
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
@@ -157,7 +146,8 @@ const SearchBooks = () => {
                         ? 'This book has already been saved!'
                         : 'Save this Book!'}
                     </Button>
-                  )}
+                      )} 
+*/}
                 </Card.Body>
               </Card>
             );

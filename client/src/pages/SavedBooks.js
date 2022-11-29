@@ -60,10 +60,10 @@ const SavedBooks = () => {
 
     try {
       await removeBook({
-        variables: { id: bookToRemove.bookId }
+        variables: { bookId: bookToRemove.bookId }
       });  
 
-      setRemoveBookId([...removeBookId, bookToRemove.bookId]);
+      // setRemoveBookId([...removeBookId, bookToRemove.bookId]);
 
       // if (!response.ok) {
       //   throw new Error('something went wrong!');
