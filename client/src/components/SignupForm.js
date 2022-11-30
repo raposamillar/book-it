@@ -11,8 +11,8 @@ import Auth from '../utils/auth';
 
 const SignupForm = () => {
   // create addUser variable to use the mutation `ADD_USER`
-  const [addUser] = useMutation(ADD_USER);
-  
+  const [addUser, { error }] = useMutation(ADD_USER);
+
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
@@ -112,6 +112,7 @@ const SignupForm = () => {
           Submit
         </Button>
       </Form>
+      {error & <div>Sign up failed</div>}
     </>
   );
 };
