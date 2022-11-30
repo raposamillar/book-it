@@ -46,6 +46,13 @@ const LoginForm = () => {
       console.error(e);
     }  
   };
+
+  // clear values from the form
+  setUserFormData({
+    email: '',
+    password: '',
+  });
+  
     //   if (!response.ok) {
     //     throw new Error('something went wrong!');
     //   }
