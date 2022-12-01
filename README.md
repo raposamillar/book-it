@@ -13,10 +13,9 @@
   - [Tests](#tests)
   - [Questions](#questions)
   - [License](#license)
-    - [This application is covered under the GPL v3.0 license.](#this-application-is-covered-under-the-gpl-v30-license)
 
   ## Description 
-  Book It is a MERN stack application with which authorized users can search the Google Books API and save the returned data to their profiles.
+  Book It is a MERN stack application with which authorized users can search the Google Books API and save the returned data to their profiles.  Note: This application is in-progress.
   
   ## Installation 
   </br>Run npm i at the root level to install root, server, and client level dependencies and devDependencies.
