@@ -34,8 +34,6 @@ const LoginForm = () => {
     }
 
     try {
-      // const response = await loginUser(userFormData);
-
       // pass in data variable from form and run the loginUser mutation
       const { data } = await loginUser({
         variables: { ...userFormData }
@@ -46,31 +44,6 @@ const LoginForm = () => {
       console.error(e);
     }  
   };
-
-  // clear values from the form
-  setUserFormData({
-    email: '',
-    password: '',
-  });
-  
-    //   if (!response.ok) {
-    //     throw new Error('something went wrong!');
-    //   }
-
-    //   const { token, user } = await response.json();
-    //   console.log(user);
-    //   Auth.login(token);
-    // } catch (err) {
-    //   console.error(err);
-    //   setShowAlert(true);
-    // }
-
-    // setUserFormData({
-    //   username: '',
-    //   email: '',
-    //   password: '',
-    // });
-  // };
 
   return (
     <>

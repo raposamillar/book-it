@@ -36,9 +36,6 @@ const SignupForm = () => {
     }
 
     try {
-      // const response = await addUser(userFormData);
-      // const response = await createUser(userFormData);
-      
       // pass in data variable from form and run the addUser mutation
       const { data } = await addUser({
         variables: { ...userFormData }
@@ -49,23 +46,6 @@ const SignupForm = () => {
       console.error(e);
     }
   };
-    //   if (!response.ok) {
-    //     throw new Error('something went wrong!');
-    //   }
-
-    //   const { token, user } = await response.json();
-    //   console.log(user);
-    //   Auth.login(token);
-    // } catch (err) {
-    //   console.error(err);
-    //   setShowAlert(true);
-    // }
-
-    // setUserFormData({
-    //   username: '',
-    //   email: '',
-    //   password: '',
-    // });
 
   return (
     <>
