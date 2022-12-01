@@ -15,7 +15,7 @@
   - [License](#license)
 
   ## Description 
-  Book It is a MERN stack application with which authorized users can search the Google Books API and save the returned data to their profiles.  Note: This application is in-progress.
+  Book It is a MERN stack application with which authorized users can search the Google Books API and save the returned data to their profiles.  Note: This application is in-progress.<br><a href="https://quiet-meadow-40848.herokuapp.com/">Future Heroku Deployment Site</a><br>
   
   ## Installation 
   </br>Run npm i at the root level to install root, server, and client level dependencies and devDependencies.
